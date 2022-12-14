@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const links = ['inicio'];
+  // const links = ['inicio'];
 
   return (
     <Flex
@@ -56,11 +56,11 @@ export const Navbar = () => {
         position={{ base: 'absolute', md: 'static' }}
         align={'center'}
         flexDirection={{ base: 'column', md: 'row' }}
-        transition={'revert-layer'}
+        transition={{ base: 'revert-layer', md: 'none' }}
         transitionDuration="300ms"
         transform={'auto'}
         translateX={{ base: `${isOpen ? '0' : '-177'}`, md: '0' }}
-        bgColor={'blanchedalmond'}
+        bgColor={{ base: 'blanchedalmond', md: 'transparent' }}
       >
         <Flex
           as={'ul'}
@@ -69,10 +69,6 @@ export const Navbar = () => {
           height={{ base: '100vh', md: '100%' }}
           flexDirection={{ base: 'column', md: 'row' }}
         >
-          <NextLink href="/" passHref>
-            <Text fontSize="xl">Inicio</Text>
-          </NextLink>
-
           <NextLink href="/productos" passHref>
             <Text fontSize="xl">Productos</Text>
           </NextLink>
@@ -82,7 +78,7 @@ export const Navbar = () => {
           </NextLink>
 
           <NextLink href="/search" passHref>
-            <Text fontSize="xl">S 0</Text>
+            <Text fontSize="xl">S0</Text>
           </NextLink>
 
           <Text fontSize="xl" display={{ base: 'none', md: 'flex' }}>
